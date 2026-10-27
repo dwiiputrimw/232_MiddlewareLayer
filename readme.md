@@ -1,5 +1,5 @@
 Nama : Dwi Putri Mahriani Wildana 
-NIM : 20250140232
+NIM : 232
 
 hasil ss-an postman
 
