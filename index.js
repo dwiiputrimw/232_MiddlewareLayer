@@ -83,7 +83,7 @@ function validateBody(schema){
 
 function validateParams(schema){
     return (req, res, next) =>{
-        const { error } = schema.validate(req.params);
+        const { error, value } = schema.validate(req.params);
             if(error){
                 return errorResponse(
                     res,
@@ -100,3 +100,7 @@ function validateParams(schema){
     }
 }
 
+app.get('/', async(req, res) =>{
+    const result = await pool.query('SELECT * FROM mahasiswa');
+    return successResponse(res, 'Data berhasil diambil', result.rows);
+})
